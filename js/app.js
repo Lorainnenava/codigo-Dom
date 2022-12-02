@@ -1,9 +1,9 @@
 // Variables
-const carrito = document.querySelector('#carrito');
-const listaCursos = document.querySelector('#lista-cursos');
-const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); 
-let articulosCarrito = [];
+const carrito = document.querySelector('#carrito');/*carrito*/
+const listaCursos = document.querySelector('#lista-cursos');/*div*/
+const contenedorCarrito = document.querySelector('#lista-carrito tbody');/*contenedor carrito*/
+const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); /*limpiar carrito*/
+let articulosCarrito = [];/*array vacio*/
 
 // Listeners
 cargarEventListeners();
@@ -50,10 +50,10 @@ function leerDatosCurso(curso) {
           const cursos = articulosCarrito.map( curso => {
                if( curso.id === infoCurso.id ) {
                     curso.cantidad++;
-                     return curso;
-                } else {
-                     return curso;
-             }
+                    return curso;
+               } else {
+                    return curso;
+          }
           })
           articulosCarrito = [...cursos];
      }  else {
@@ -115,5 +115,5 @@ function vaciarCarrito() {
      // forma rapida (recomendada)
      while(contenedorCarrito.firstChild) {
           contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-      }
+     }
 }
